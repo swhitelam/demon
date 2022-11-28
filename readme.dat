@@ -1,0 +1,13 @@
+Codes carry out GA training of neural-net demon from https://arxiv.org/abs/2211.10853, for Ising model magnetization reversal.
+
+I run GA by compiling taskfarmer
+
+g++ -Wall -o deschamps taskfarmer_l2w_ga.c -lm -O
+
+and then running
+
+sbatch deschamps.sh
+
+You'll have to change the cluster-specific commands in taskfarmer_l2w_ga.c and deschamps.sh to work on your cluster.
+
+The code l2w_amc.c runs aMC or GA, but is currently set for GA. The flow of the code can be understood by starting from the main() function.
